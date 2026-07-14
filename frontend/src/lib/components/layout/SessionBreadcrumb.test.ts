@@ -369,7 +369,7 @@ describe("SessionBreadcrumb", () => {
       menuLabels.indexOf("Copy command"),
     );
 
-    await unmount(component);
+    unmount(component);
   });
 
   it("renders gemini with rose badge color", async () => {
@@ -417,11 +417,11 @@ describe("SessionBreadcrumb", () => {
           '[data-testid="claude-code-link"]',
         )?.getAttribute("href"),
       ).toBe(
-        "claude://code/new?folder=%2Ftmp%2Fclaude%20project",
+        "claude-cli://open?cwd=%2Ftmp%2Fclaude%20project",
       );
     });
 
-    await unmount(component);
+    unmount(component);
   });
 
   it("falls back to blue for unknown agents", async () => {
